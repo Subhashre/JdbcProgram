@@ -27,7 +27,7 @@ public class CallableStatementDemo {
 				System.out.print("Salary = "+rs.getInt("ESalary")+" ,");
 				System.out.println("Name = "+rs.getString("EName"));
 			}
-			System.out.println("Callable with input parameter");
+			System.out.println("Callable with input parameter :getEmployeeById ");
 			sqlQuery = "call getEmployeeById(?)";
 			stmt = conn.prepareCall(sqlQuery);
 			stmt.setInt(1, 2);
@@ -38,6 +38,14 @@ public class CallableStatementDemo {
 				System.out.println("Name = "+rs.getString("EName"));
 			}
 			
+			System.out.println("Callable with input parameter :getEmployeeNameById ");
+			sqlQuery = "call getEmployeeNameById(?)";
+			stmt = conn.prepareCall(sqlQuery);
+			stmt.setInt(1, 2);
+			rs = stmt.executeQuery();
+			while(rs.next()) {
+				System.out.println("Name = "+rs.getString("EName"));
+			}
 			stmt.close();
 			conn.close();
 			
