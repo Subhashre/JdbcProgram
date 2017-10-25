@@ -52,7 +52,6 @@ public class TransactionDemo {
 			sql = "INSERT INTO `employee` (`ENo`, `EName`, `ESalary`, `Designation`) VALUES ('7', 'Dada', '10000', 'Lawyer') ";
 			stmt = conn.createStatement();
 			
-//			System.out.println("Nos of row affescted :" + stmt.execute(sql));
 			System.out.println("Nos of row affescted :" + stmt.executeUpdate(sql));
 			
 			
